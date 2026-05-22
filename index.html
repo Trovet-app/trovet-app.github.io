@@ -441,6 +441,48 @@
   }
 
   /* ============================================================
+     Manifesto strip — three core brand messages (zh / en switch)
+     ============================================================ */
+  .manifesto-section {
+    padding: var(--s64) 0;
+    text-align: center;
+  }
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s32);
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    .manifesto-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--s40);
+    }
+  }
+  .manifesto-msg {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    padding: 0 var(--s16);
+    position: relative;
+  }
+  .manifesto-msg::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: var(--accent-yellow);
+    border-radius: 2px;
+    margin: 0 auto var(--s16);
+  }
+  @media (min-width: 768px) {
+    .manifesto-msg { font-size: 22px; }
+  }
+
+  /* ============================================================
      Mini features grid (secondary)
      ============================================================ */
   .mini-features {
@@ -703,7 +745,7 @@
     max-width: 520px; margin: 0 auto var(--s32);
     font-size: 16px; line-height: 1.7;
   }
-  /* Store buttons (Google Play + App Store,並排兩顆) */
+  /* Store buttons (Google Play + App Store，並排兩顆) */
   .store-row {
     display: flex; flex-wrap: wrap; gap: var(--s12);
     justify-content: center;
@@ -913,6 +955,20 @@
 </header>
 
 <!-- ============================================================
+     MANIFESTO — Three core brand messages bridging hero to features
+     Source of truth: docs/brand-messaging.md §核心訊息
+     ============================================================ -->
+<section class="manifesto-section" id="manifesto">
+  <div class="container">
+    <div class="manifesto-grid">
+      <p class="manifesto-msg reveal" data-i18n="manifestoMsg1">你擁有的比想像值錢</p>
+      <p class="manifesto-msg reveal" data-i18n="manifestoMsg2">用得越久，每天越划算</p>
+      <p class="manifesto-msg reveal" data-i18n="manifestoMsg3">哪些東西真的有在用</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      FEATURES — split rows with real screenshots
      ============================================================ -->
 <section class="section" id="features">
@@ -984,7 +1040,7 @@
       <div class="split-copy">
         <span class="eyebrow" data-i18n="row3Eyebrow">區域</span>
         <h3><span data-i18n="row3Titlea">從家到隨身，</span><br /><span class="accent" data-i18n="row3Titleb">從俯瞰開始</span></h3>
-        <p data-i18n="row3Body">10 個預設區域(隨身、客廳、臥室、廚房…),每個區域顯示總值與物品件數。可重新命名、自由排序、新增自訂區域。「隨身」永遠放第一位 — 因為這是你最常用的物品。</p>
+        <p data-i18n="row3Body">10 個預設區域(隨身、客廳、臥室、廚房…)，每個區域顯示總值與物品件數。可重新命名、自由排序、新增自訂區域。「隨身」永遠放第一位 — 因為這是你最常用的物品。</p>
         <ul class="hint-list">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1317,6 +1373,11 @@
       heroStatWarrantyUnit: "天",
       heroStatCost: "折合持有成本",
       heroStatCostMonth: "月",
+
+      manifestoMsg1: "你擁有的比想像值錢",
+      manifestoMsg2: "用得越久，每天越划算",
+      manifestoMsg3: "哪些東西真的有在用",
+
       featuresEyebrow: "功能特色",
       featuresH2a: "為每一件物品",
       featuresH2b: "寫一本屬於它的傳記",
@@ -1434,6 +1495,11 @@
       heroStatWarrantyUnit: "days",
       heroStatCost: "Daily / monthly cost",
       heroStatCostMonth: "mo",
+
+      manifestoMsg1: "You own more than you think",
+      manifestoMsg2: "The longer you keep it, the less it costs per day",
+      manifestoMsg3: "See what you're actually using",
+
       featuresEyebrow: "FEATURES",
       featuresH2a: "Write a biography",
       featuresH2b: "for every thing you own",
